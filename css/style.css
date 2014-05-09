@@ -11,7 +11,7 @@ body{margin:0; padding:0; background-color:#DD9FDD; font-family:Tahoma, Geneva, 
 	min-height: 0;
 	padding: 56px 23px 15px;
 	position: relative;
-	width: 890px;
+	width: 1190px;
 }
 
 .leftfrme{
@@ -32,8 +32,8 @@ body{margin:0; padding:0; background-color:#DD9FDD; font-family:Tahoma, Geneva, 
 	height:60px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	background: #485258;
-	border-bottom: 1px solid #363743;
+	background: #0084B4 ;
+	border-bottom: 1px solid #CCC;
 	padding:10px;
 	color:#FFF;
 }
@@ -41,12 +41,23 @@ body{margin:0; padding:0; background-color:#DD9FDD; font-family:Tahoma, Geneva, 
 .welcomebox-bottom{
 	width:270px;
 	height:30px;
+	text-indent:80px;
+	font-weight:bold;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	background: #363e42;
+	background: #FFF;
 	border-bottom: 1px solid #363743;
 	padding:10px;
-	color:#FFF;
+	color:#000;
+}
+
+.welcombox-img{
+	width:70px;
+	height:70px;
+	border-radius: 5px;
+	background: #FFF;
+	border-bottom: 1px solid #363743;
+	padding:3px; margin-top:20px;
 }
 
 .menubox{
@@ -64,14 +75,13 @@ body{margin:0; padding:0; background-color:#DD9FDD; font-family:Tahoma, Geneva, 
 
 .detailbox{
 	width:570px;
-	min-height:600px;
+	min-height:520px;
 	height:auto;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	background: #FFF;
-	padding:10px;
 	color:#000;
 }
 
@@ -80,7 +90,7 @@ body{margin:0; padding:0; background-color:#DD9FDD; font-family:Tahoma, Geneva, 
 	width:100%;
 	height:46px;
 	line-height:40px;
-	text-align:center;
+	text-indent:80px;
 	background-image:url(../images/header_bg.png);
 	background-repeat: repeat-x;
 	position: fixed;

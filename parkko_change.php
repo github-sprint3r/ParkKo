@@ -6,6 +6,11 @@
 </head>
 <body>
 <form action="" method="post">
+	<div style="float:left; width:100%; height:auto; padding:10px;">
+	<font color="#8899a6"><strong>ชำระค่าที่จอดรถ</strong></font>
+    </div>
+    <hr />
+    <div style="float:left; width:97%; height:auto; padding:10px;">
 	<fieldset>
     <legend>จ่ายค่าจอดรถ</legend>
 	<table width="90%">
@@ -63,6 +68,7 @@
         </tbody>
     </table>
     </fieldset>
+    </div>
 </form>
 </body>
 </html>

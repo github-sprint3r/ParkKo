@@ -1,5 +1,5 @@
 <?php
-include("connect_db.php");
+//include("connect_db.php");
 if(isset($_POST['car_number'])){
 	$sql_insert = "INSERT INTO car_parking
 						(check_in,
@@ -23,9 +23,6 @@ if(isset($_POST['car_number'])){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<script src="js/jquery-1.8.1.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="css/ui/jquery-ui.css" media="screen" />
 
 </head>
 <body>

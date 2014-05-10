@@ -1,3 +1,4 @@
+<?php include("connect_db.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,7 +24,7 @@
             <!-- Left Menu frame -->
             <div class="menubox">
             <ul>
-            	<li><a href="?page=showreceipt.php">พิมพ์ใบเสร็จ</a></li>
+            	<li><a href="?page=showreceipt">พิมพ์ใบเสร็จ</a></li>
                 <li><a href="?page=form_checkin">คำนวณค่าจอดรถ</a></li>
                 <li><a href="?page=parkko_change">ชำระค่าจอดรถ</a></li>
             </ul>

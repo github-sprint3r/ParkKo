@@ -1,5 +1,5 @@
 <?php
-//include("connect_db.php");
+include("connect_db.php");
 require_once 'ParkKoExchange.php';
 $payment = new ParkKoExchange();
 if(isset($_POST['submit'])){
@@ -17,14 +17,14 @@ if(isset($_POST['submit'])){
 	}else{
 		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
 	}
-}
+}*/
 
 $sql_data="SELECT
 car_parking.parking_fee,
 money_receive
 FROM `car_parking` 
 WHERE car_parking.park_id='1' ";
-$result_data=mysql_query($sql_data);
+/*$result_data=mysql_query($sql_data);
 list($parking_fee,$money_receive)=mysql_fetch_row($result_data);
 if(!isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($parking_fee,$money_receive),true);

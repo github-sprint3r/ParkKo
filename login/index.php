@@ -20,8 +20,6 @@
 			$data = array($user_profile->identifier,$user_profile->firstName,$user_profile->gender,$user_profile->lastName,$user_profile->profileURL,$user_profile->region,$user_profile->displayName,'7',$timeUpdate,'false',1,$timeUpdate);
 			
 			$db->insert($field,$data)->save();
-			
-			die();
 		}
 		
 		if($_SESSION['displayname'] != ""){

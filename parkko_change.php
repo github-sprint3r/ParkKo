@@ -23,12 +23,12 @@ $sql_data="SELECT
 car_parking.parking_fee,
 money_receive
 FROM `car_parking` 
-WHERE car_parking.park_id='1' ";*/
+WHERE car_parking.park_id='1' ";
 $result_data=mysql_query($sql_data);
 list($parking_fee,$money_receive)=mysql_fetch_row($result_data);
 if(!isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($parking_fee,$money_receive),true);
-}
+}*/
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

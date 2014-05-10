@@ -11,7 +11,7 @@ if(isset($_POST['submit_1'])){
 						money_receive='{$_POST[payment_1]}',
 						money_change='{$_POST[money_change]}'
 						WHERE park_id='1' ";
-	$result_insert = mysql_db_query(DB,$sql_insert);
+	$result_insert = mysql_query(DB,$sql_insert);
 	if($result_insert){
 		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
 	}else{

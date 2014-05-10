@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="contrainer">
-	<div class="header"><strong>Park KO</strong></div>
+	<div class="header"><div class="wrapper" style="padding:0; text-align:left;"><strong>Park KO</strong></div></div>
     <div class="boxBody">
     <div class="wrapper">
     	<div class="leftfrme">
@@ -22,7 +22,11 @@
             <!-- Left Welcomeframe frame -->
             <!-- Left Menu frame -->
             <div class="menubox">
-            
+            <ul>
+            	<li>พิมพ์ใบเสร็จ</li>
+                <li>คำนวณค่าจอดรถ</li>
+                <li>ชำระค่าจอดรถ</li>
+            </ul>
             </div>
             <!-- Left Menu frame -->
 		<!-- Left frame -->

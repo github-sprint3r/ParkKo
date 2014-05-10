@@ -1,5 +1,5 @@
 <?php
-//include("connect_db.php");
+include("connect_db.php");
 if(isset($_POST['car_number'])){
 	$sql_insert = "INSERT INTO car_parking
 						(check_in,

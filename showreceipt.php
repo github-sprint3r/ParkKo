@@ -13,33 +13,16 @@
 <body>
 
 <?php
-//include "receipt.php";
-//$link = mysql_connect("119.59.97.37","root","logon","park_ko") or die("Error " . mysql_error($link));
-//$link->set_charset("utf8");mysql
-//$query = "SELECT name FROM mytable" or die("Error in the consult.." . mysql_error($link));
-//mysql_connect("119.59.97.37","root","logon");
-//mysql_select_db("park_ko");
 
 	function tranTime($date){
 		$date = explode(" ", $date);
 		$date1 = explode("-", $date[0]);
 		return $date1[2]."/".$date1[1]."/".($date1[0]+543-2500)." เวลา ".($date[1]." น.");
 	}
-	
-class printout{
-	function printslip($carid){
-	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
-	$data = mysql_query($dataCar);
-	$dataInCarNumber = mysql_fetch_assoc($data);
-	return $dataInCarNumber;
-	}
-}
-
 if(isset($_POST['search'])){
 	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
 	$data = mysql_query($dataCar);
 	$dataInCarNumber = mysql_fetch_assoc($data);
-	echo print_r($dataInCarNumber);
 }	
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once 'ParkKoExchange.php';
+require_once '../ParkKoExchange.php';
 $payment = new ParkKoExchange();
 if(isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($_POST['cost'],$_POST['payment']),true);

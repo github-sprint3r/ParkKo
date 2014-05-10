@@ -1,5 +1,5 @@
 <?php
-//include("connect_db.php");
+include("connect_db.php");
 if(isset($_POST['car_number'])){
 	$sql_insert = "INSERT INTO car_parking
 						(check_in,
@@ -10,7 +10,7 @@ if(isset($_POST['car_number'])){
 						'".$_POST["car_number"]."',
 						'".$_POST["province"]."'
 						)";
-	$result_insert = mysql_db_query(DB,$sql_insert);
+	//$result_insert = mysql_db_query(DB,$sql_insert);
 	if($result_insert){
 		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
 	}else{
@@ -28,7 +28,7 @@ if(isset($_POST['car_number'])){
 <link rel="stylesheet" type="text/css" href="css/ui/jquery-ui.css" media="screen" />
 <script>
 <?php
-//$sql_province="SELECT province_name FROM province ORDER BY province_name";
+$sql_province="SELECT province_name FROM province ORDER BY province_name";
 //$re_province = mysql_db_query(DB,$sql_province);
 ?>
 $(function() {

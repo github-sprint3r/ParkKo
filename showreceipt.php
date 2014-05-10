@@ -12,7 +12,7 @@
 </head>
 <body>
 
-
+xxx
 <?php
 //include "receipt.php";
 $link = mysqli_connect("119.59.97.37","root","logon","park_ko") or die("Error " . mysqli_error($link));

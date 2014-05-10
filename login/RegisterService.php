@@ -100,7 +100,7 @@ class parkKoRegisterService  extends MySQLi
 			 
 			 $sql = "SELECT $field FROM  $this->table $where";
 			 
-			 $this->query = $this->query($sql) or die($sql);
+			 $this->query = $this->query($sql);
 			 
 			 return $this;
 		}

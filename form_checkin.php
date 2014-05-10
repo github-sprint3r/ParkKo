@@ -6,15 +6,26 @@
 </head>
 <body>
 <form action="" method="post">
-<table width="200" border="0" >
-  <tr>
-    <td align="right">เลขทะเบียน: </td>
-    <td><input type="text" id="car_number" name="car_number" value=""/></td>
-    <td align="right">จังหวัด: </td>
-    <td><input type="text" id="province" name="province" value=""/></td>
-    <td><input type="submit" name="bt_check_in" value="เริ่มจอด"/></td>
-  </tr>
+<div style="width:570px;">
+<table width="100%" border="0" >
+	<tr>
+    	<td colspan="2">บันทึกเวลาเข้าจอดรถ</td>
+    </tr>
+    <tr>
+        <td align="right" width="50%">เลขทะเบียน: </td>
+        <td><input type="text" id="car_number" name="car_number" value=""/></td>
+    </tr>
+    <tr>
+        <td align="right">จังหวัด: </td>
+        <td><input type="text" id="province" name="province" value=""/></td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+        	<center><input type="submit" name="bt_check_in" value="เริ่มจอด"/></center>
+        </td>
+    </tr>
 </table>
+</div>
 </form>
 </body>
 </html>

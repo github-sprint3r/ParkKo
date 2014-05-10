@@ -14,10 +14,10 @@
 
 <?php
 //include "receipt.php";
-//$link = mysql_connect("119.59.97.37","root","logon","park_ko") or die("Error " . mysqli_error($link));
-//$link->set_charset("utf8");
-//$query = "SELECT name FROM mytable" or die("Error in the consult.." . mysqli_error($link));
-//mysqli_connect("119.59.97.37","root","logon");
+//$link = mysql_connect("119.59.97.37","root","logon","park_ko") or die("Error " . mysql_error($link));
+//$link->set_charset("utf8");mysql
+//$query = "SELECT name FROM mytable" or die("Error in the consult.." . mysql_error($link));
+//mysql_connect("119.59.97.37","root","logon");
 //mysql_select_db("park_ko");
 
 	function tranTime($date){
@@ -28,17 +28,17 @@
 	
 class printout{
 	function printslip($carid){
-	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysqli_error($link));
+	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
 	$data = $link->query($dataCar);
-	$dataInCarNumber = mysqli_fetch_assoc($data);
+	$dataInCarNumber = mysql_fetch_assoc($data);
 	return $dataInCarNumber;
 	}
 }
 
 if(isset($_POST['search'])){
-	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysqli_error($link));
-	$data = mysqli_query($link,$dataCar);
-	$dataInCarNumber = mysqli_fetch_assoc($data);
+	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
+	$data = mysql_query($link,$dataCar);
+	$dataInCarNumber = mysql_fetch_assoc($data);
 	echo print_r($dataInCarNumber);
 }	
 

@@ -14,7 +14,6 @@
 			$this->assertTrue($result);
 		}
 		function test_name(){
-			var $data;
 			$this->input->startConnect();
 			$this->input->dataQuery('fist_name',"WHERE fist_name ='131d3'")->parseQueryToJson();
 			$data = $this->input->parseJsonToObject();

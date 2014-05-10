@@ -39,7 +39,7 @@ include('connect_db.php');
          	<!-- Right frame -->
          	<div class="detailbox">
             <?php
-			$page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'].'.php' : '';
+			$page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'].'.php' : 'form_checkin.php';
 			if($page != ''){include_once $page;}
 			?>
             </div>

@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="contrainer">
-	<div class="header"><strong>Park KO</strong></div>
+	<div class="header"><div class="wrapper" style="padding:0; text-align:left;"><strong>Park KO</strong></div></div>
     <div class="boxBody">
     <div class="wrapper">
     	<div class="leftfrme">

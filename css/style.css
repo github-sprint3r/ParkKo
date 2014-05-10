@@ -11,7 +11,7 @@ body{margin:0; padding:0; background-color:#DD9FDD; font-family:Tahoma, Geneva, 
 	min-height: 0;
 	padding: 56px 23px 15px;
 	position: relative;
-	width: 1190px;
+	width: 890px;
 }
 
 .leftfrme{
@@ -90,7 +90,6 @@ body{margin:0; padding:0; background-color:#DD9FDD; font-family:Tahoma, Geneva, 
 	width:100%;
 	height:46px;
 	line-height:40px;
-	text-indent:80px;
 	background-image:url(../images/header_bg.png);
 	background-repeat: repeat-x;
 	position: fixed;

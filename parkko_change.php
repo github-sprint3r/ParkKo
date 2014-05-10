@@ -1,12 +1,12 @@
 <?php
-include("connect_db.php");
+//include("connect_db.php");
 require_once 'ParkKoExchange.php';
 $payment = new ParkKoExchange();
 if(isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($_POST['cost'],$_POST['payment']),true);
 }
 
-if(isset($_POST['submit_1'])){
+/*if(isset($_POST['submit_1'])){
 	$sql_insert = "UPDATE car_parking SET
 						money_receive='{$_POST[payment_1]}',
 						money_change='{$_POST[money_change]}'
@@ -28,7 +28,7 @@ $result_data=mysql_query($sql_data);
 list($parking_fee,$money_receive)=mysql_fetch_row($result_data);
 if(!isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($parking_fee,$money_receive),true);
-}
+}*/
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

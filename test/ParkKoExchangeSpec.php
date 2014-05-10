@@ -1,5 +1,5 @@
 <?php
-require_once(_DIR_.'/../ParkKoExchange.php');
+require_once(__DIR__.'/../ParkKoExchange.php');
 
 class ParkKoExchangeSpec extends PHPUnit_Framework_TestCase{
 	

@@ -26,20 +26,12 @@
 		return $date1[2]."/".$date1[1]."/".($date1[0]+543-2500)." เวลา ".($date[1]." น.");
 	}
 	
-class printout{
-	function printslip($carid){
-	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
-	$data = mysql_query($dataCar);
-	$dataInCarNumber = mysql_fetch_assoc($data);
-	return $dataInCarNumber;
-	}
-}
 
 if(isset($_POST['search'])){
 	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
 	$data = mysql_query($dataCar);
 	$dataInCarNumber = mysql_fetch_assoc($data);
-	echo print_r($dataInCarNumber);
+	//echo print_r($dataInCarNumber);
 }	
 
 ?>

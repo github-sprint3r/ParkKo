@@ -22,7 +22,11 @@
             <!-- Left Welcomeframe frame -->
             <!-- Left Menu frame -->
             <div class="menubox">
-            
+            <ul>
+            	<li>พิมพ์ใบเสร็จ</li>
+                <li>คำนวณค่าจอดรถ</li>
+                <li>ชำระค่าจอดรถ</li>
+            </ul>
             </div>
             <!-- Left Menu frame -->
 		<!-- Left frame -->

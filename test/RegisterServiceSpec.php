@@ -1,5 +1,5 @@
 <?php 
-	require_once __DIR__.'/../login/registerService.php';
+	require_once __DIR__.'/../login/RegisterService.php';
 	class RegisterServiceSpec extends PHPUnit_Framework_TestCase{
 		var $input;
 		function setup(){

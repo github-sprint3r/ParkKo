@@ -23,7 +23,7 @@
             <!-- Left Menu frame -->
             <div class="menubox">
             <ul>
-            	<li><a href="?page=print">พิมพ์ใบเสร็จ</a></li>
+            	<li><a href="?page=showreceipt.php">พิมพ์ใบเสร็จ</a></li>
                 <li><a href="?page=form_checkin">คำนวณค่าจอดรถ</a></li>
                 <li><a href="?page=parkko_change">ชำระค่าจอดรถ</a></li>
             </ul>
@@ -35,8 +35,8 @@
          	<!-- Right frame -->
          	<div class="detailbox">
             <?php
-			$page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'].'.php' : 'parkko_change.php';
-			include_once $page;
+			$page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'].'.php' : '';
+			if($page != ''){include_once $page;}
 			?>
             </div>
             <!-- Right frame -->

@@ -1,5 +1,5 @@
 <?php
-include("connect_db.php");
+//include("connect_db.php");
 if(isset($_POST['car_number'])){
 	$sql_insert = "INSERT INTO car_parking
 						(check_in,
@@ -28,8 +28,8 @@ if(isset($_POST['car_number'])){
 <link rel="stylesheet" type="text/css" href="css/ui/jquery-ui.css" media="screen" />
 <script>
 <?php
-$sql_province="SELECT province_name FROM province ORDER BY province_name";
-$re_province = mysql_db_query(DB,$sql_province);
+//$sql_province="SELECT province_name FROM province ORDER BY province_name";
+//$re_province = mysql_db_query(DB,$sql_province);
 ?>
 $(function() {
     var availableTags = [

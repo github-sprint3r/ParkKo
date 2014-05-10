@@ -1,6 +1,11 @@
 <?php
 include("connect_db.php");
-echo "2014-05-10 13:03:17" - "2014-05-10 13:13:17";
+$date_start = new DateTime("2012-04-10 11:26:00");
+$date_end = new DateTime("2013-04-10 11:50:00");
+$interval = $date_start->diff($date_end);
+$second = ($interval->y*12)*30*24;
+echo $second;
+echo "Result " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days ".$interval->H." Hours ".$interval->i." minus ".$interval->s." sec ";
 if(isset($_POST['car_number'])){
 	$check_out = date("Y-m-d H:i:s");
 	$sql_update = "UPDATE car_parking

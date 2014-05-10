@@ -1,7 +1,7 @@
     <?php
 		if($_GET['provider']){
 			$config = 'hybridauth/config.php';
-			
+			echo $_GET['provider'];
 			require_once( "hybridauth/Hybrid/Auth.php" );
 			//require_once( "RegisterService.php" );
 			

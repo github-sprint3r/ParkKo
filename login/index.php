@@ -13,8 +13,12 @@
 			
 			$user_profile = $adapter->getUserProfile(); 
 			
-			echo '<div style="display:table; margin:auto;"><img src="http://graph.facebook.com/'.$user_profile->identifier.'/picture"></div>';
-			echo '<div style="display:table; margin:auto; font-size:22px; font-weight:bold">Welcome '.$user_profile->displayName.'</div>';
+			$_SESSION['displayname'] = $user_profile->identifier;
+			
+		}
+		
+		if($_SESSION['displayname']){
+			header('../welcom.php');
 			exit(0);
 		}
 	?>

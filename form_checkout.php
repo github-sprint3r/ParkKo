@@ -1,5 +1,5 @@
 <?php
-include("connect_db.php");
+//include("connect_db.php");
 include("CalculateParkingFee.php");
 if(isset($_POST['car_number'])){
 	$check_out = date("Y-m-d H:i:s");
@@ -15,7 +15,7 @@ if(isset($_POST['car_number'])){
 		$caluate = new CalculateParkingFee();
 		$hours = $caluate->calculateHour($check_in["check_in"],$check_out);
 		$pay = $caluate->calculateFeeNormalRate($hours);
-		die();
+		//die();
 		$sql_update = "UPDATE car_parking
 						SET check_out = '".$check_out."',
 							parking_time = '".$hours."'
@@ -24,8 +24,7 @@ if(isset($_POST['car_number'])){
 							province = '".$_POST["province"]."'";
 		$result_update = mysql_db_query(DB,$sql_update);
 		if($result_update){
-			echo '<script>alert("เลขทะเบียนรถ:'.$_POST["car_number"].' '.$_POST["province"].'\n
-								เวลาเข้า");</script>';
+			echo '<script>alert("เลขทะเบียนรถ '.$_POST["car_number"].' '.$_POST["province"].' ค่าจอดรถ '.$pay.' บาท");window.location="?page=form_checkin";</script>';
 		}else{
 			echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
 		}

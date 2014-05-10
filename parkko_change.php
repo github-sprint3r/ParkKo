@@ -15,7 +15,7 @@ if(isset($_POST['submit_1'])){
 	if($result_insert){
 		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
 	}else{
-		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
+		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>'; 
 	}
 }
 

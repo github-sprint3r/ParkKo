@@ -31,7 +31,6 @@
             <!-- Left Menu frame -->
 		<!-- Left frame -->
          </div>
-         
          <div class="rightframe">
          	<!-- Right frame -->
          	<div class="detailbox">

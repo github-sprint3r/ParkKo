@@ -29,7 +29,7 @@
 class printout{
 	function printslip($carid){
 	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
-	$data = $link->query($dataCar);
+	$data = mysql_query($dataCar);
 	$dataInCarNumber = mysql_fetch_assoc($data);
 	return $dataInCarNumber;
 	}
@@ -37,7 +37,7 @@ class printout{
 
 if(isset($_POST['search'])){
 	$dataCar = "SELECT * FROM car_parking WHERE car_number='".$_POST['carNum']."' " or die("Error in the consult.." . mysql_error($link));
-	$data = mysql_query($link,$dataCar);
+	$data = mysql_query($dataCar);
 	$dataInCarNumber = mysql_fetch_assoc($data);
 	echo print_r($dataInCarNumber);
 }	

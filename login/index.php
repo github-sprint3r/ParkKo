@@ -3,7 +3,7 @@
 			$config = 'hybridauth/config.php';
 			
 			require_once( "hybridauth/Hybrid/Auth.php" );
-			
+			require_once( "RegisterService.php" );
 			
 			$hybridauth = new Hybrid_Auth( $config );
 			
@@ -11,8 +11,15 @@
 			
 			$user_profile = $adapter->getUserProfile(); 
 			
+			$_SESSION['identifier'] = $user_profile->identifier;
 			$_SESSION['displayname'] = $user_profile->displayName;
 			
+			print_r($user_profile);
+			
+			$db = new parkKoRegisterService();
+			
+			$field = array('id','fist_name','gender','last_name','link','local','name','timezone','updated_time','verified','type_api','timeupdate');
+			$data = array('','John','male','Doe','http://www.link.com','Th','John Doe','7','20140510','false',1,$timeUpdate);
 		}
 		
 		if($_SESSION['displayname']){

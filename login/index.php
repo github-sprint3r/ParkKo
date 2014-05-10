@@ -1,4 +1,5 @@
     <?php
+		error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 		if($_GET['provider']){
 			$config = 'hybridauth/config.php';
 			

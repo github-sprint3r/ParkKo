@@ -13,7 +13,7 @@
 
 return 
 	array(
-		"base_url" => "http://202.129.35.102/jullachai/Park-Ko/hybridauth/", 
+		"base_url" => "http://119.59.97.33/login/hybridauth/", 
 
 		"providers" => array ( 
 			// openid providers

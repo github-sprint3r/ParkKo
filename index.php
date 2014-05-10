@@ -24,7 +24,7 @@
             <div class="menubox">
             <ul>
             	<li><a href="?page=print">พิมพ์ใบเสร็จ</a></li>
-                <li><a href="?page=print">คำนวณค่าจอดรถ</a></li>
+                <li><a href="?page=form_checkin">คำนวณค่าจอดรถ</a></li>
                 <li><a href="?page=parkko_change">ชำระค่าจอดรถ</a></li>
             </ul>
             </div>

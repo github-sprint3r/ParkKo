@@ -24,7 +24,7 @@
 			die();
 		}
 		
-		if($_SESSION['displayname']){
+		if($_SESSION['displayname'] != ""){
 			header("Location: http://119.59.97.33/welcome.php");
 			exit(0);
 		}

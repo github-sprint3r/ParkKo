@@ -1,6 +1,6 @@
 <?php
 
-class parkKoRegisterService  extends MySQLi
+class parkKoRegisterService  
 {
 		private $host = '119.59.97.37';
 		private $user = 'root';
@@ -77,14 +77,11 @@ class parkKoRegisterService  extends MySQLi
 		{
 			if(!empty($this->host) && !empty($this->user) && !empty($this->pass) && !empty($this->db) )
 			{
-				parent::__construct($this->host,$this->user,$this->pass,$this->db);	
-			 
-				 if( $this->connect_errno){
-					 
-					  die('Connection error!;');		 
-				 }
-				 
-				 $this->set_charset($this->charset);
+				 mysql_connect($this->host,$this->user,$this->pass);	
+			     
+				 mysql_select_db($this->db);
+				 				 
+				mysql_set_charset($this->charset);
 				 
 			}else{
 				
@@ -100,7 +97,7 @@ class parkKoRegisterService  extends MySQLi
 			 
 			 $sql = "SELECT $field FROM  $this->table $where";
 			 
-			 $this->query = $this->query($sql);
+			 $this->query = mysql_query($sql);
 			 
 			 return $this;
 		}
@@ -109,12 +106,12 @@ class parkKoRegisterService  extends MySQLi
 		{
 			if(!empty($this->query))
 			{
-				 while($row = $this->query->fetch_assoc())
+				 while($row = mysql_fetch_assoc($this->query))
 				 {
 						$data[] = $row; 
 				 }
 				 
-				 $this->query->free();
+				 mysql_free_result();
 				 
 				 $this->result = json_encode($data);
 				 
@@ -140,7 +137,7 @@ class parkKoRegisterService  extends MySQLi
 				
 				$this->dataQuery("COUNT($field) AS num","WHERE $field = '$value'");
 				
-				$row = $this->query->fetch_assoc();
+				$row = mysql_fetch_assoc($this->query);
 				
 				return $row['num']; 
 		}
@@ -150,7 +147,8 @@ class parkKoRegisterService  extends MySQLi
 			 if(count($this->insert) == 2)
 			 {
 					 $sql  = "REPLACE INTO $this->table (".$this->insert['field'].")  VALUES(".$this->insert['data'].") ";
-					 return  $this->query($sql);
+					 
+					 return  mysql_query($sql);
 			 } 
 			 
 		}
@@ -158,7 +156,7 @@ class parkKoRegisterService  extends MySQLi
 		public function errorQuery()
 		{
 				
-				return 'Error : '.$this->error; 
+				return 'Error : '.mysql_error(); 
 		}
 		
 		public function  parseJsonToObject()
@@ -172,16 +170,16 @@ class parkKoRegisterService  extends MySQLi
 }
 
 
-$d = new parkKoRegisterService;
+/*$d = new parkKoRegisterService;
 
 $d->startConnect();
-/*
 
-$field = array('fist_name','gender','last_name','link','local','name','timezone','updated_time','verified','type_api','timeupdate');
+
+$field = array('id','fist_name','gender','last_name','link','local','name','timezone','updated_time','verified','type_api','timeupdate');
 
 $timeUpdate = date('Y-m-d H:i:s');
 
-$data = array('John','male','Doe','http://www.link.com','Th','John Doe','7','20140510','false',1,$timeUpdate);
+$data = array(rand(1000,99999),'John','male','Doe','http://www.link.com','Th','John Doe','7','20140510','false',1,$timeUpdate);
 
 $d->insert($field,$data)->save();
 

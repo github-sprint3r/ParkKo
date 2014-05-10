@@ -1,5 +1,6 @@
 <?php
 include("connect_db.php");
+include("CalculateParkingFee.php");
 if(isset($_POST['car_number'])){
 	$check_out = date("Y-m-d H:i:s");
 	$sql_select = "SELECT check_in
@@ -11,17 +12,10 @@ if(isset($_POST['car_number'])){
 	$rs_date = mysql_query($sql_select);
 	$check_in = mysql_fetch_assoc($rs_date);
 	if(isset($check_in["check_in"])){
-		$date_start = new DateTime($check_in["check_in"]);
-		$date_end = new DateTime($check_out);
-		$interval = $date_start->diff($date_end);
-		$seconds = ($interval->d*24*3600) + ($interval->h*3600) + ($interval->i*60) + ($interval->s);
-		//echo $interval->d .' days'. $interval->h .' hours'. $interval->i .' mius'. $interval->s .' sec'.'<br>';
-		$hours = $seconds/3600;
-		$hours = round($hours,0);
-		if($seconds%3600 != 0){
-			$hours++;	
-		}
-		//die();
+		$caluate = new CalculateParkingFee();
+		$hours = $caluate->calculateHour($check_in["check_in"],$check_out);
+		$pay = $caluate->calculateFeeNormalRate($hours);
+		die();
 		$sql_update = "UPDATE car_parking
 						SET check_out = '".$check_out."',
 							parking_time = '".$hours."'
@@ -30,7 +24,8 @@ if(isset($_POST['car_number'])){
 							province = '".$_POST["province"]."'";
 		$result_update = mysql_db_query(DB,$sql_update);
 		if($result_update){
-			echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
+			echo '<script>alert("เลขทะเบียนรถ:'.$_POST["car_number"].' '.$_POST["province"].'\n
+								เวลาเข้า");</script>';
 		}else{
 			echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
 		}

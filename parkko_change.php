@@ -82,32 +82,43 @@ if(!isset($_POST['submit'])){
     	<tbody>
         	<tr>
             	<td width="30%" align="right">จำนวนเงินทอน : </td>
-                <td align="right"> <?php echo (isset($exchenge['exchange']))?number_format($exchenge['exchange'],2):'0.00';?></td>
+                <td align="right"> <?php echo (isset($exchenge['exchange']))?number_format($exchenge['exchange'],2):'0.00';?>
+                </td>
                 <td width="50%"> บาท</td>
             </tr>
             <tr>
             	<td align="right">แบงค์ 500 : </td>
-                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['500']))?$exchenge['arr_exchange']['500']:0; ?></td>
+                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['500']))?$exchenge['arr_exchange']['500']:0; ?>
+                <input type="hidden" id="bank_500" name="bank_500" value=" <?php echo (isset($exchenge['arr_exchange']['500']))?$exchenge['arr_exchange']['500']:0; ?>" />
+                </td>
                 <td> ฉบับ</td>
             </tr>
             <tr>
             	<td align="right">แบงค์ 100 : </td>
-                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['100']))?$exchenge['arr_exchange']['100']:0; ?></td>
+                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['100']))?$exchenge['arr_exchange']['100']:0; ?>
+                <input type="hidden" id="bank_100" name="bank_100" value=" <?php echo (isset($exchenge['arr_exchange']['100']))?$exchenge['arr_exchange']['100']:0; ?>" />
+                </td>
                 <td> ฉบับ</td>
             </tr>
             <tr>
             	<td align="right">แบงค์ 50 : </td>
-                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['50']))?$exchenge['arr_exchange']['50']:0; ?></td>
+                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['50']))?$exchenge['arr_exchange']['50']:0; ?>
+                <input type="hidden" id="bank_50" name="bank_50" value=" <?php echo (isset($exchenge['arr_exchange']['50']))?$exchenge['arr_exchange']['50']:0; ?>" />
+                </td>
                 <td> ฉบับ</td>
             </tr>
             <tr>
             	<td align="right">แบงค์ 20 : </td>
-                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['20']))?$exchenge['arr_exchange']['20']:0; ?></td>
+                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['20']))?$exchenge['arr_exchange']['20']:0; ?>
+                <input type="hidden" id="bank_20" name="bank_20" value=" <?php echo (isset($exchenge['arr_exchange']['20']))?$exchenge['arr_exchange']['20']:0; ?>" />
+                </td>
                 <td> ฉบับ</td>
             </tr>
             <tr>
             	<td align="right">เหรียญ 10 : </td>
-                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['10']))?$exchenge['arr_exchange']['10']:0; ?></td>
+                <td align="right"> <?php echo (isset($exchenge['arr_exchange']['10']))?$exchenge['arr_exchange']['10']:0; ?>
+                <input type="hidden" id="bank_10" name="bank_10" value=" <?php echo (isset($exchenge['arr_exchange']['10']))?$exchenge['arr_exchange']['10']:0; ?>" />
+                </td>
                 <td> เหรียญ</td>
             </tr>
             <?php if(isset($exchenge)){ ?>

@@ -150,6 +150,8 @@ class parkKoRegisterService  extends MySQLi
 			 if(count($this->insert) == 2)
 			 {
 					 $sql  = "REPLACE INTO $this->table (".$this->insert['field'].")  VALUES(".$this->insert['data'].") ";
+					 echo $sql;
+					 die();
 					 return  $this->query($sql);
 			 } 
 			 

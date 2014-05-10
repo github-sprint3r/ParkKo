@@ -21,6 +21,7 @@
 			
 			$db->insert($field,$data)->save();
 			
+			die();
 		}
 		
 		if($_SESSION['displayname']){

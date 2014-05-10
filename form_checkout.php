@@ -23,13 +23,24 @@ if(isset($_POST['car_number'])){
 							car_number = '".$_POST["car_number"]."' and
 							province = '".$_POST["province"]."'";
 		$result_update = mysql_db_query(DB,$sql_update);
-		if($result_update){
+		/*if($result_update){
 			echo '<script>alert("เลขทะเบียนรถ '.$_POST["car_number"].' '.$_POST["province"].' ค่าจอดรถ '.$pay.' บาท");window.location="?page=form_checkin";</script>';
 		}else{
 			echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
 		}
 	}else{
 		echo '<script>alert("ไม่มีข้อมูล");</script>';
+	}*/
+		if($result_update){
+			echo "เลขทะเบียนรถ ".$_POST["car_number"]."".$_POST["province"]." ค่าจอดรถ ".$pay." บาท";
+			echo "<meta http-equiv='refresh' content='3; URL=?page=form_checkin'>";
+		}else{
+			echo "ไม่สามารถบันทึกข้อมูลได้";
+			echo "<meta http-equiv='refresh' content='3; URL=?page=form_checkout'>";
+		}
+	}else{
+			echo "ไม่มีข้อมูล";
+			echo "<meta http-equiv='refresh' content='3; URL=?page=form_checkout'>";
 	}
 }
 ?>
@@ -64,6 +75,9 @@ $(function() {
 </script>
 </head>
 <body>
+<?php
+if(!isset($_POST['bt_check_out'])){
+?>
 <form action="" method="post">
 <div style="width:570px;">
 <table width="100%" border="0" >
@@ -86,5 +100,8 @@ $(function() {
 </table>
 </div>
 </form>
+<?php
+}
+?>
 </body>
 </html>

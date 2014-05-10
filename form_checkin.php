@@ -11,10 +11,17 @@ if(isset($_POST['car_number'])){
 						'".$_POST["province"]."'
 						)";
 	$result_insert = mysql_db_query(DB,$sql_insert);
-	if($result_insert){
+	/*if($result_insert){
 		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");window.location="?page=form_checkout";</script>';
 	}else{
 		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");window.location="?page=form_checkin";</script>';
+	}*/
+	if($result_insert){
+		echo "บันทึกข้อมูลเรียบร้อย";
+		echo "<meta http-equiv='refresh' content='3; URL=?page=form_checkout'>";
+	}else{
+		echo "ไม่สามารถบันทึกข้อมูลได้";
+		echo "<meta http-equiv='refresh' content='3; URL=?page=form_checkin'>";
 	}
 }
 ?>
@@ -49,6 +56,9 @@ $(function() {
 </script>
 </head>
 <body>
+<?php
+if(!isset($_POST['bt_check_in'])){
+?>
 <form action="" method="post">
 <div style="width:570px;">
 <table width="100%" border="0" >
@@ -71,5 +81,8 @@ $(function() {
 </table>
 </div>
 </form>
+<?php
+}
+?>
 </body>
 </html>

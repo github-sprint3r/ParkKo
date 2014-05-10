@@ -12,11 +12,10 @@
 </head>
 <body>
 
-xxx
 <?php
 //include "receipt.php";
-$link = mysqli_connect("119.59.97.37","root","logon","park_ko") or die("Error " . mysqli_error($link));
-$link->set_charset("utf8");
+//$link = mysql_connect("119.59.97.37","root","logon","park_ko") or die("Error " . mysqli_error($link));
+//$link->set_charset("utf8");
 //$query = "SELECT name FROM mytable" or die("Error in the consult.." . mysqli_error($link));
 //mysqli_connect("119.59.97.37","root","logon");
 //mysql_select_db("park_ko");

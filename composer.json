@@ -1,0 +1,8 @@
+{
+ 	"require": {
+ 		"phpunit/phpunit":"4.0.20"
+ 	},
+	"autoload":{
+		"classmap":["web/"]
+	}
+}

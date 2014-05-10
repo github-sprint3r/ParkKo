@@ -11,7 +11,7 @@
 			
 			$user_profile = $adapter->getUserProfile(); 
 			
-			$_SESSION['displayname'] = $user_profile->identifier;
+			$_SESSION['displayname'] = $user_profile->displayName;
 			
 		}
 		

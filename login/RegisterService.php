@@ -150,8 +150,6 @@ class parkKoRegisterService  extends MySQLi
 			 if(count($this->insert) == 2)
 			 {
 					 $sql  = "REPLACE INTO $this->table (".$this->insert['field'].")  VALUES(".$this->insert['data'].") ";
-					 echo $sql;
-					 die();
 					 return  $this->query($sql);
 			 } 
 			 
@@ -173,11 +171,11 @@ class parkKoRegisterService  extends MySQLi
 		
 }
 
-/*
+
 $d = new parkKoRegisterService;
 
 $d->startConnect();
-
+/*
 
 $field = array('fist_name','gender','last_name','link','local','name','timezone','updated_time','verified','type_api','timeupdate');
 
@@ -190,12 +188,12 @@ $d->insert($field,$data)->save();
 echo  $d->checkDataExist('id','123123124333');
 
 /*
-
+*/
 $x = $d->dataQuery('fist_name')->parseQueryToJson();
 
 $obj = $d->parseJsonToObject();
 
 echo $obj[0]->{'fist_name'}; 
-*/
+
 
 ?>

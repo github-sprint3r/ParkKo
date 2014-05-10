@@ -188,12 +188,12 @@ $d->insert($field,$data)->save();
 echo  $d->checkDataExist('id','123123124333');
 
 /*
-*/
+
 $x = $d->dataQuery('fist_name')->parseQueryToJson();
 
 $obj = $d->parseJsonToObject();
 
 echo $obj[0]->{'fist_name'}; 
-
+*/
 
 ?>

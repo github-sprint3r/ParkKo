@@ -1,6 +1,5 @@
 <?php
 require_once('../ParkKoExchange.php');
-
 class ParkKoExchangeSpec extends PHPUnit_Framework_TestCase{
 	
 	function test(){

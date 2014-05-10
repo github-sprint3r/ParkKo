@@ -1,4 +1,23 @@
-
+<?php
+include("connect_db.php");
+if(isset($_POST['car_number'])){
+	$sql_insert = "INSERT INTO car_parking
+						(check_in,
+						car_number,
+						province)
+					VALUES
+						('".date("Y-m-d H:i:s")."',
+						'".$_POST["car_number"]."',
+						'".$_POST["province"]."'
+						)";
+	//$result_insert = mysql_db_query(DB,$sql_insert);
+	if($result_insert){
+		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
+	}else{
+		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
+	}
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>

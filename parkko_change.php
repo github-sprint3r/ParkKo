@@ -11,11 +11,11 @@ if(isset($_POST['submit'])){
 						money_receive='{$_POST[payment_1]}',
 						money_change='{$_POST[money_change]}'
 						WHERE park_id='1' ";
-	$result_insert = mysql_db_query(DB,$sql_insert);
+	$result_insert = mysql_query($sql_insert);
 	if($result_insert){
 		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
 	}else{
-		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
+		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>'; 
 	}
 }*/
 
@@ -26,9 +26,9 @@ FROM `car_parking`
 WHERE car_parking.park_id='1' ";
 $result_data=mysql_query($sql_data);
 list($parking_fee,$money_receive)=mysql_fetch_row($result_data);
-/*if(!isset($_POST['submit'])){
+if(!isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($parking_fee,$money_receive),true);
-}*/
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

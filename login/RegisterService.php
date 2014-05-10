@@ -111,7 +111,7 @@ class parkKoRegisterService
 						$data[] = $row; 
 				 }
 				 
-				 mysql_free_result();
+				 //mysql_free_result();
 				 
 				 $this->result = json_encode($data);
 				 

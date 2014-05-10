@@ -10,7 +10,7 @@ if(isset($_POST['car_number'])){
 						'".$_POST["car_number"]."',
 						'".$_POST["province"]."'
 						)";
-	$result_insert = mysql_query(DB,$sql_insert);
+	$result_insert = mysql_db_query(DB,$sql_insert);
 	if($result_insert){
 		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
 	}else{
@@ -26,27 +26,7 @@ if(isset($_POST['car_number'])){
 <script src="js/jquery-1.8.1.min.js"></script>
 <script src="js/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="css/ui/jquery-ui.css" media="screen" />
-<script>
-<?php
-$sql_province="SELECT province_name FROM province ORDER BY province_name";
-$re_province = mysql_query(DB,$sql_province);
-?>
-$(function() {
-    var availableTags = [
-	<?php
-	while($province = mysql_fetch_assoc($re_province)){
-									echo '"'.$province[province_name].'",';
-							}
-	?>
-    ];
-    $("#province").autocomplete({
-		source: function(request, response) {
-			var results = $.ui.autocomplete.filter(availableTags, request.term);
-			response(results.slice(0, 6));
-		}
-    });
-});
-</script>
+
 </head>
 <body>
 <form action="" method="post">

@@ -1,7 +1,11 @@
 <?php
-include("connect_db.php");
+<<<<<<< HEAD
 require_once '../ParkKoExchange.php';
 
+=======
+include("connect_db.php");
+require_once 'ParkKoExchange.php';
+>>>>>>> 3e5c6a7e1fc99e6c6218d18cff9ed485fd97f504
 $payment = new ParkKoExchange();
 if(isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($_POST['cost'],$_POST['payment']),true);

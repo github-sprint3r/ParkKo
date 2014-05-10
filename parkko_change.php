@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
 	$exchenge = json_decode($payment->cal($_POST['cost'],$_POST['payment']),true);
 }
 
-if(isset($_POST['submit_1'])){
+/*if(isset($_POST['submit_1'])){
 	$sql_insert = "UPDATE car_parking SET
 						money_receive='{$_POST[payment_1]}',
 						money_change='{$_POST[money_change]}'
@@ -17,7 +17,7 @@ if(isset($_POST['submit_1'])){
 	}else{
 		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>'; 
 	}
-}
+}*/
 
 $sql_data="SELECT
 car_parking.parking_fee,

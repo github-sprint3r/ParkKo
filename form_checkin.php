@@ -1,5 +1,5 @@
 <?php
-include("connect_db.php");
+//include("connect_db.php");
 if(isset($_POST['car_number'])){
 	$sql_insert = "INSERT INTO car_parking
 						(check_in,
@@ -12,9 +12,9 @@ if(isset($_POST['car_number'])){
 						)";
 	$result_insert = mysql_db_query(DB,$sql_insert);
 	if($result_insert){
-		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");</script>';
+		echo '<script>alert("บันทึกข้อมูลเรียบร้อย");window.location="?page=form_checkout";</script>';
 	}else{
-		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");</script>';
+		echo '<script>alert("ไม่สามารถบันทึกข้อมูลได้");window.location="?page=form_checkin";</script>';
 	}
 }
 ?>
